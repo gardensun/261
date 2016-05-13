@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>First One</title>
+<script>
+	
+	function Fruit(name,type,colour){
+		this.name = name;
+		this.type = type;
+		this.colour = colour;
+		this.eat = function(){
+				if(type!="Gross"){
+					console.log("Okay! Yum!");
+				} else {
+					console.log("Uhhhh.. no. Ew.");
+				};
+			};
+	};
+	
+	var sweetApple = new Fruit("Sweet Apple","Yummy","red");//without 'new' it breaks
+	//var sweetApple = new Fruit(name:"Sweet Apple",type:"Yummy",colour:"red"); broken code
+	var sourApple = new Fruit("Sour Apple","Yummy","green"); //'Fruit' must be capitalized because original function is capitalized
+	var banana = new Fruit("Banana","Gross","yellow");
+	
+	
+	
+	function check(){
+		console.log(sweetApple.name);
+		console.log(banana.eat); //just posts the text of the function, doesnt execute
+		console.log(banana.eat());
+	};
+
+
+</script>
+</head>
+
+<body> 
+<button type ="button" onclick="check()">Test</button>                        
+</body>       
+</html>
