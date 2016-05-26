@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Fourth One</title>
+<script>
+
+	//Simple Data
+	//Arrays
+	//Associative Arrays
+	//Objects
+	
+	function Fruit(name,type,colour){
+		this.name = name;
+		this.type = type;
+		this.colour = colour;
+		this.eat = function(){
+				if(type!="Gross"){
+					console.log("Okay! Yum!");
+				} else {
+					console.log("Uhhhh.. no. Ew.");
+				};
+			};
+	};
+	
+	
+	var clem = new Fruit("Clementine","Yummy","Orange"); //{"name":"Clementine","type":"Yummy","colour":"Orange"}
+	var clemText = JSON.stringify(clem);
+	sessionStorage.setItem('Clementine',clemText);
+	var newClem = JSON.parse(sessionStorage.getItem('Clementine')); //retains qualities but loses methods
+	
+	//var redGrape = new Fruit("Grape", )
+	//localStorage.setItem()
+	
+	
+
+</script>
+</head>
+
+<body> 
+<button type ="button" onclick="check()">Test</button>                        
+</body>       
+</html>

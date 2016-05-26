@@ -5,10 +5,19 @@
 <title>First One</title>
 <script>
 	
+	//more inheritance - inherit from two things
+	//circular inheritance
+	//passing null
+	
+	
 	function Fruit(name,type,colour){
 		this.name = name;
 		this.type = type;
 		this.colour = colour;
+		Food.call(parameters);
+	};
+	
+	function Food(parameters){
 		this.eat = function(){
 				if(type!="Gross"){
 					console.log("Okay! Yum!");
@@ -23,13 +32,9 @@
 	var sourApple = new Fruit("Sour Apple","Yummy","green"); //'Fruit' must be capitalized because original function is capitalized
 	var banana = new Fruit("Banana","Gross","yellow");
 	
-	
-	
-	function check(){
-		console.log(sweetApple.name);
-		console.log(banana.eat); //just posts the text of the function, doesnt execute
-		console.log(banana.eat());
-	};
+	console.log(sweetApple.name);
+	console.log(banana.eat); //just posts the text of the function, doesnt execute
+	console.log(banana.eat());
 
 
 </script>
