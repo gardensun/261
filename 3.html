@@ -5,6 +5,7 @@
 <title>Third One</title>
 <script>
 	
+	
 	var clem = {"name":"Clementine","type":"Yummy","colour":"Orange"}
 	var clemText = JSON.stringify(clem);
 	var newClem = JSON.parse(clemText);
@@ -12,11 +13,17 @@
 	var num = 125;
 	var numText = JSON.stringify(num);
 	var newNum = JSON.parse(numText);
+	var anothernNum = JSON.parse(newNum); //not a string cannot parse
+
 	
 	
-	var nasty;
-	var nastyText = JSON.stringify(nasty);
-	//var newNasty = JSON.parse(nastyText); cannot parse undefined
+	var nasty1;
+	var nastyText1 = JSON.stringify(nasty);
+	var newNasty1 = JSON.parse(nastyText); //cannot parse undefined
+	var nasty2 = JSON.stringify(""); //empty string- no point
+	var nasty3 = JSON.stringify(); //empty parameter
+	var nasty4 = JSON.parse()
+	
 	
 	
 </script>
