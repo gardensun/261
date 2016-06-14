@@ -9,38 +9,72 @@
 	//circular inheritance
 	//passing null
 	
-	
-	function Fruit(name,type,colour){
-		this.name = name;
-		this.type = type;
-		this.colour = colour;
-		Food.call(parameters);
-	};
-	
-	function Food(parameters){
-		this.eat = function(){
-				if(type!="Gross"){
-					console.log("Okay! Yum!");
-				} else {
-					console.log("Uhhhh.. no. Ew.");
+	function all(){
+		function Fruit(name,type,colour){
+			this.name = name;
+			this.type = type;
+			this.colour = colour;
+			Food.call();
+			Plant.call();
+		};
+		
+		function Food(){
+			this.eat = function(){
+					if(type!="Gross"){
+						console.log("Okay! Yum!");
+					} else {
+						console.log("Uhhhh.. no. Ew.");
+					};
 				};
-			};
+		};
+		
+		function Plant(){
+			this.status = "vegetarian";
+		}
+		
+		//NASTY PATHS
+	
+	//circular inheritance
+		//Person calls Creature, which calls Sentience, which calls Person.
+		function Person(name,type,colour){
+			this.name = name;
+			this.gender = gender;
+			Creature.call();
+		};
+		
+		function Creature(){
+			this.type = "Living";
+			Sentience.call();
+		};
+		
+		function Sentience(){
+			this.status = "Sentient";
+			Person.call();
+		}
+		
+		var sourApple = new Fruit("Sour Apple","Yummy","green"); 
+		var banana = new Fruit("Banana","Gross","yellow");
+		
+		console.log(sourApple.name);
+		console.log(banana.eat); //just posts the text of the function, doesnt execute
+		console.log(banana.eat());
+			
+		var peach = new Fruit();
+		console.log(peach.name);
+		
+		var grape = new Fruit(5,7,9);
+		console.log(grape.type);
+		console.log(grape.eat());
+		
+		var apricot = new Fruit("Apricot","Yummy","orange","Best");
+		
 	};
-	
-	var sweetApple = new Fruit("Sweet Apple","Yummy","red");//without 'new' it breaks
-	//var sweetApple = new Fruit(name:"Sweet Apple",type:"Yummy",colour:"red"); broken code
-	var sourApple = new Fruit("Sour Apple","Yummy","green"); //'Fruit' must be capitalized because original function is capitalized
-	var banana = new Fruit("Banana","Gross","yellow");
-	
-	console.log(sweetApple.name);
-	console.log(banana.eat); //just posts the text of the function, doesnt execute
-	console.log(banana.eat());
 
 
 </script>
 </head>
 
 <body> 
-<button type ="button" onclick="check()">Test</button>                        
+<button type ="button" onclick="all()">Test</button>                        
 </body>       
 </html>

@@ -56,35 +56,58 @@
 			};
 		};
 		console.log(alphArray);
+	};
 		
 		
-	//Nasty Paths
+	//NASTY PATHS
 	//Loops
-		for( ; ; ){}
-		for(var i = 0; i<=3;i++){} //empty repeatable block- will still run but accomplish nothing
-		for(var i =1;i>0;i++){} //infinite loop
-		while(i==1){} //infinite loop, i will always == 1
+		function npLoops(){
+			for( ; ; ){}
+			for(var i = 0; i<=3;i++){} //empty repeatable block- will still run but accomplish nothing
+			//for(var i =1;i>0;i++){} //infinite loop
+			//while(i==1){} infinite loop, i will always == 1
+		};
+		
 	//Conditionals
-		response = null; 
-		f(response!="friday"){
-				console.log("It ought to be Friday.");
-			} else {
-				console.log("Hooray!");
-				bool = true; //if you remove this line it will loop forever
-			};
+		function npCond(){
+			response = null; 
+			if(response!="friday"){
+					console.log("It ought to be Friday.");
+				} else {
+					console.log("Hooray!");
+					bool = true; //if you remove this line it will loop forever
+				};
+			if(response="friday"){
+				console.log("It ought to be Friday.");}	
+		};
+		
 	//Functions & Parameters
-		three();
-		three(5);
-		three(4,0.15,7);
-		//correct number of parameters is 2. When there is the incorrect number nothing happens.
+		function npFunc(){
+			three();
+			three(5);
+			three(4,0.15,7);
+			//correct number of parameters is 2. When there is the incorrect number nothing happens.
+		};
+		
 	//Arrays
-		console.log(alphArray[40]); //undefined- there is no 40
-		console.log(alphArray[-1]); //undefined- no negative indexes
-
+		function npArrays(){
+			var test = [0];
+			console.log(test[40]); //undefined- there is no 40
+			console.log(test[-1]); //undefined- no negative indexes
+			test.pop();
+			test.push('Push');
+			
+			test[20] = 20;
+			console.log(test[19]); //undefined, I made a hole.
+			
+			test.splice(1,0,"splice"); //add
+			test.splice(15,3); //remove
+		};
+		
 </script>
 </head>
 
 <body> 
-<button type ="button" onclick="check()">Test</button>                        
+<button type ="button" onclick="npArrays()">Test</button>                        
 </body>       
 </html>

@@ -41,10 +41,16 @@
 	//when calling a node and appendChild-ing or insertBefore-ing, it will automatically move it, so you dont have to delete it first.
 
 	*/
+	
+	function addElement(){
+		var div = document.body.children[0];
+		document.body.createTextNode('Some Text');
+	}
+	
 </script>
 </head>
 
 <body> 
-<button type ="button" onclick="check()">Test</button>                        
+<button type ="button" onclick="addElement()">Test</button>                        
 </body>       
 </html>
