@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Eighth One</title>
+<script>
+
+	var req = new XMLHttpRequest();
+	var url = //"url of API website. Like weather or whatever."
+	
+	req.onreadystatechange = function() {
+		if (req.readyState ==4 && req.status ==200){
+			console.log(req.responseText);
+			var reqArray = JSON.parse(req.responseText); //turns site info into array
+			console.log(reqArray);
+			console.log(reqArray.Poster); //picks just the poster and shows it
+			jsonArrayToHtml(reqArray);
+		};
+	};
+		
+	req.open("GET", url, true);
+	req.send(); 
+	
+	function arrayToHTML(array) {
+		var displayDiv = document.getElementById("id01");
+		var posterImg = document.createElement("img");
+		posterImg.src = array.Poster;
+		displayDiv.appendChild(posterImg);
+	};
+	
+	//Nasty Paths
+/* 		req.open("POST"),url,true); //POST is technically incorrect -- it is used client -> server
+		req.open("GET",url,false); //"Synchronous XMLHttpRequest on the main thread is deprecated because of its detrimental effects to the end user's experience."
+		req.send("");
+		req.send(0);
+*/
+	
+
+</script>
+</head>
+
+<body> 
+<div id="id01"></div>                      
+</body>       
+</html>

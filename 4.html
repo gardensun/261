@@ -19,6 +19,10 @@
 			};
 	};
 	
+	//alternate syntax
+	sessionStorage.name = "Summer"
+	console.log(sessionStorage.name);
+	
 	//Simple data
 	var userName = "Summer"
 	sessionStorage.setItem('userName',JSON.stringify(userName)); //stringify redundant but ensures storage
@@ -46,6 +50,11 @@
 	var clemText = JSON.stringify(clem);
 	sessionStorage.setItem('Clementine',clemText);
 	var newClem = JSON.parse(sessionStorage.getItem('Clementine')); //retains qualities but loses methods
+	
+	//nasty paths
+	var nullVariable;
+	sessionStorage.setItem('userName',JSON.stringify(nullVariable));
+	session.setItem('nasty',JSON.stringify());
 	
 	
 	

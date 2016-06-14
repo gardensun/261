@@ -56,8 +56,30 @@
 			};
 		};
 		console.log(alphArray);
-
-
+		
+		
+	//Nasty Paths
+	//Loops
+		for( ; ; ){}
+		for(var i = 0; i<=3;i++){} //empty repeatable block- will still run but accomplish nothing
+		for(var i =1;i>0;i++){} //infinite loop
+		while(i==1){} //infinite loop, i will always == 1
+	//Conditionals
+		response = null; 
+		f(response!="friday"){
+				console.log("It ought to be Friday.");
+			} else {
+				console.log("Hooray!");
+				bool = true; //if you remove this line it will loop forever
+			};
+	//Functions & Parameters
+		three();
+		three(5);
+		three(4,0.15,7);
+		//correct number of parameters is 2. When there is the incorrect number nothing happens.
+	//Arrays
+		console.log(alphArray[40]); //undefined- there is no 40
+		console.log(alphArray[-1]); //undefined- no negative indexes
 
 </script>
 </head>
