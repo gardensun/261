@@ -1,56 +1,22 @@
 <!DOCTYPE HTML>
 <html lang="en-us">
-<head>
-<meta charset="utf-8">
-<title>Fifth One</title>
-<script>
+	<head>
+		<meta charset="utf-8">
+		<title>DOM Manipulation</title>
+		<script>
+			function addJunk(){
+				var p = document.createElement('p')
+				p = "Here is some stuff."
+				var q = document.createTextNode("Here is some more stuff.")
+			};
+		</script>
+	</head>
 
-/*	Creation methods:
-
-	document.createElement(tag) - creates a new element node.
-	document.createTextNode(value) - creates a new text node with given value
-	elem.cloneNode(deep) - clones the element
-	
-	Inserting and removing methods are called from parent node. All of them return elem:
-	parent.appendChild(elem)
-	parent.insertBefore(elem, nextSibling)
-	parent.removeChild(elem)
-	parent.replaceChild(elem, currentElem)
-
-	
-	var div = document.createElement('div')
-	var textElem = document.createTextNode('Robin was here')
-
-	//node becomes last child
-	//var div = document.body.children[0]
-	var span = document.createElement('span')
-	span.innerHTML = 'A new span!'
-	div.appendChild(span)
-
-	//inserts node after firstChild (or whatever you want)
-	var div = document.body.children[0]
-	var span = document.createElement('span')
-	span.innerHTML = 'A new span!'
-	div.insertBefore(span, div.firstChild)
-
-	
-	//remove nodes
-	parentElem.removeChild(elem)
-	parentElem.replaceChild(elem, currentElem) //replace currentElem with elem
-	
-	//when calling a node and appendChild-ing or insertBefore-ing, it will automatically move it, so you dont have to delete it first.
-
-	*/
-	
-	function addElement(){
-		var div = document.body.children[0];
-		document.body.createTextNode('Some Text');
-	}
-	
-</script>
-</head>
-
-<body> 
-<button type ="button" onclick="addElement()">Test</button>                        
-</body>       
+	<body> 
+		<h1>This is the header</h1>
+		<p>And this is a paragraph.</p>
+		<p>Here is another paragraph.</p>
+		<p>Here is the last paragraph. <br> It has two sentences.</p>   
+		<button type ="button" onclick="addJunk()">Test</button>   		
+	</body>       
 </html>

@@ -6,27 +6,30 @@
 <script>
 
 	var req = new XMLHttpRequest();
-	var url = "api.openweathermap.org/data/2.5/weather?q=London,uk"
+	//var url = "http://api.openweathermap.org/data/2.5/weather?q=London,uk";
+	var url = "http://www.omdbapi.com/?t=The+Rescuers&y=&plot=short&r=json";
+	
+	function arrayToHTML(array) {
+		var displayDiv = document.getElementById("id01");
+		var posterImg = document.createElement("img");
+		posterImg.src = array.Poster;
+		displayDiv.appendChild(posterImg);
+	};
 	
 	req.onreadystatechange = function() {
 		if (req.readyState ==4 && req.status ==200){
 			console.log(req.responseText);
 			var reqArray = JSON.parse(req.responseText); //turns site info into array
 			console.log(reqArray);
-			console.log(reqArray.Poster); //picks just the poster and shows it
-			jsonArrayToHtml(reqArray);
+			console.log(reqArray.Title);
+			console.log(reqArray.Poster);//picks just the poster and shows it
+			arrayToHTML(reqArray);
 		};
 	};
 		
 	req.open("GET", url, true);
 	req.send(); 
 	
-	/*function arrayToHTML(array) {
-		var displayDiv = document.getElementById("id01");
-		var posterImg = document.createElement("img");
-		posterImg.src = array.Poster;
-		displayDiv.appendChild(posterImg);
-	};*/
 	
 	//Nasty Paths
 /* 		req.open("POST"),url,true); //POST is technically incorrect -- it is used client -> server

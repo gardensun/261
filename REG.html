@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+    <head>
+	<meta charset ="utf-8">
+        <title> Random Encounter Generator </title>
+		<script>
+			function die (numDice,faces) {
+				var total = 0;
+				var roll;
+				for(i=1;i<=numDice;i++){
+					roll = Math.floor(Math.random()*faces)+1;
+					total += roll;
+				}
+				return total;
+			}
+		
+			function encounterTable (){
+				var roll = die(1,20);
+				if (roll<=13){
+					return "No Encounter";
+				}
+				else if (roll<=15){
+					return "Roll once on the Terrain Encounters table.";
+				}
+				else if(roll<=17){
+					return creatureEncounterTable();
+				}
+				else if (roll<=20){
+					return creatureEncounterTable();
+					//indicate that Terrain Table should also be rolled
+				}
+				else {
+					return "Numbers over 20 are not accepted. Please check your die roll.";
+				}
+			}
+			
+			function creatureEncounterTable () {
+				var roll = die(1,20);
+				if (roll<=2){
+					return "Ambushers";
+					//reroll if chars are resting-- leave for now
+				}
+				else if (roll==3){
+					return "Carrion Crawler";
+				}
+				else if (roll<=5){
+					return "Escaped Slaves";
+				}
+				else if (roll<=7){
+					return "Fungi";
+				}
+				else if (roll<=9){
+					return "Giant Fire Beatles";
+				}
+				else if (roll<=11){
+					return "Giant Rocktopus";
+				}
+				else if (roll==12){
+					return "Mad Creature";
+				}
+				else if (roll==13){
+					return "Ochre Jelly";
+				}
+				else if (roll<=15){
+					return "Raiders";
+				}
+				else if (roll==16){
+					return "Scouts";
+				}
+				else if (roll==17){
+					return "Society of Brilliance";
+				}
+				else if (roll==18){
+					return "Spore Servants";
+				}
+				else if (roll<=20){
+					return "Traders";
+				}
+				else{
+					return "Numbers over 20 are not accepted. Please check your die roll.";
+				}
+			}
+			
+			function test(){
+				document.getElementById('test').innerHTML = encounterTable();
+			}
+			
+		</script>
+    </head>
+    <body>
+		<h1> Out of the Abyss: Random Encounter Generator </h1>
+		<br>
+		<button type="button" onclick="test()">Roll</button>
+		<br><br>
+		<div id="test"></div>
+    </body>
+	
+</html>

@@ -19,9 +19,13 @@
 			};
 	};
 	
-	//alternate syntax
+	//alternate syntax- dot notation
 	sessionStorage.name = "Summer"
 	console.log(sessionStorage.name);
+	
+	//alternate syntax- associative array notation
+	
+	
 	
 	//Simple data
 	var userName = "Summer"
@@ -32,7 +36,7 @@
 	
 	//Arrays
 	var siblingNames = ["Hayley","Spencer","Ashley"]; 
-	sessionStorage.SetItem('userSiblingNames',JSON.stringify(siblingNames));
+	sessionStorage.setItem('userSiblingNames',JSON.stringify(siblingNames));
 	
 	//Associative Arrays
 	var siblings = [
@@ -53,9 +57,19 @@
 	
 	//nasty paths
 	var nullVariable;
-	sessionStorage.setItem('userName',JSON.stringify(nullVariable));
-	session.setItem('nasty',JSON.stringify());
+	var store = 100;
+
+	sessionStorage.setItem('userName',nullVariable);
+	session.setItem('nasty',);
+	sessionStorage.setItem('nasty',store));
+	localStorage.setItem( , );
+	localStorage.setItem('',store);
+	localStorage.setItem(null,store);
 	
+	localStorage.getItem(null);
+	localStorage.getItem();
+	sessionStorage.getItem('nonexistant');//not a saved key
+	sessionStorage.getItem('');
 	
 	
 	

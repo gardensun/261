@@ -1,113 +1,113 @@
 <!DOCTYPE HTML>
 <html lang="en-us">
-<head>
-<meta charset="utf-8">
-<title>First One</title>
-<script>
+	<head>
+	<meta charset="utf-8">
+	<title>First One</title>
+	<script>
 
-	function days(){
-		var bool = false; //naming the variable 'boolean' will break because it is a reserved word
-		while(bool==false){
-			var response = toLowerCase(window.prompt("What day is it?"));
-			if(response!="friday"){
-				console.log("It ought to be Friday.");
-			} else {
-				console.log("Hooray!");
-				bool = true; //if you remove this line it will loop forever
-			};
-		};
-	};
-	
-	function two(){
-		for(var i=0;i<3;i++){ //changing the incrementing to i+ will break it. Changing the requirement to i<3 will cause it to loop too few times.
-			switch(i){
-				case 0:
-					console.log("This is the first loop!");
-					break; //removing a break will cause it to execute the next block of code as well instead of stopping
-				case 1:
-					console.log("This is the second loop!");
-					break;
-				case 2:
-					console.log("This is the third and final loop!");
-					break;
-				default:
-					console.log("Something went wrong.");
-			};
-		};
-	};
-	
-	function three(price,tipPercentDecimal) {
-		var taxRate = 0.06; //the var indicates a new variable being created. Without it it will look for an existing one and find none.
-		var tax = taxRate * price; // the parameters used must be spelled the same as they are in the requirements given at the creation of the function.
-		var tip = price * tipPercentDecimal;
-		var billTotal = price + tax + tip;
-		console.log("Your tip should be " + tip + ", and your tax is " + tax + ". Your full bill is " + billTotal+ "."); 
-		// ^changing the "" could cause it to see the variables as part of the string.
-	};
-	
-	function four(number){
-		var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-		var alphArray;
-		for(var i=0;i<number;i++){
-			if(i!=0){
-				alphArray[alphArray.length] = alphabet.substring(i,i+1);
-			}else{
-				alphArray = ['A'];
-			};
-		};
-		console.log(alphArray);
-	};
-		
-		
-	//NASTY PATHS
-	//Loops
-		function npLoops(){
-			for( ; ; ){}
-			for(var i = 0; i<=3;i++){} //empty repeatable block- will still run but accomplish nothing
-			//for(var i =1;i>0;i++){} //infinite loop
-			//while(i==1){} infinite loop, i will always == 1
-		};
-		
-	//Conditionals
-		function npCond(){
-			response = null; 
-			if(response!="friday"){
+		function days(){
+			var bool = false; //naming the variable 'boolean' will break because it is a reserved word
+			while(bool==false){
+				var response = toLowerCase(window.prompt("What day is it?"));
+				if(response!="friday"){
 					console.log("It ought to be Friday.");
 				} else {
 					console.log("Hooray!");
 					bool = true; //if you remove this line it will loop forever
 				};
-			if(response="friday"){
-				console.log("It ought to be Friday.");}	
+			};
 		};
 		
-	//Functions & Parameters
-		function npFunc(){
-			three();
-			three(5);
-			three(4,0.15,7);
-			//correct number of parameters is 2. When there is the incorrect number nothing happens.
+		function two(){
+			for(var i=0;i<3;i++){ //changing the incrementing to i+ will break it. Changing the requirement to i<3 will cause it to loop too few times.
+				switch(i){
+					case 0:
+						console.log("This is the first loop!");
+						break; //removing a break will cause it to execute the next block of code as well instead of stopping
+					case 1:
+						console.log("This is the second loop!");
+						break;
+					case 2:
+						console.log("This is the third and final loop!");
+						break;
+					default:
+						console.log("Something went wrong.");
+				};
+			};
 		};
 		
-	//Arrays
-		function npArrays(){
-			var test = [0];
-			console.log(test[40]); //undefined- there is no 40
-			console.log(test[-1]); //undefined- no negative indexes
-			test.pop();
-			test.push('Push');
+		function three(price,tipPercentDecimal) {
+			var taxRate = 0.06; //the var indicates a new variable being created. Without it it will look for an existing one and find none.
+			var tax = taxRate * price; // the parameters used must be spelled the same as they are in the requirements given at the creation of the function.
+			var tip = price * tipPercentDecimal;
+			var billTotal = price + tax + tip;
+			console.log("Your tip should be " + tip + ", and your tax is " + tax + ". Your full bill is " + billTotal+ "."); 
+			// ^changing the "" could cause it to see the variables as part of the string.
+		};
+		
+		function four(number){
+			var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			var alphArray;
+			for(var i=0;i<number;i++){
+				if(i!=0){
+					alphArray[alphArray.length] = alphabet.substring(i,i+1);
+				}else{
+					alphArray = ['A'];
+				};
+			};
+			console.log(alphArray);
+		};
 			
-			test[20] = 20;
-			console.log(test[19]); //undefined, I made a hole.
 			
-			test.splice(1,0,"splice"); //add
-			test.splice(15,3); //remove
-		};
-		
-</script>
-</head>
+		//NASTY PATHS
+		//Loops
+			function npLoops(){
+				for( ; ; ){}
+				for(var i = 0; i<=3;i++){} //empty repeatable block- will still run but accomplish nothing
+				//for(var i =1;i>0;i++){} //infinite loop
+				//while(i==1){} infinite loop, i will always == 1
+			};
+			
+		//Conditionals
+			function npCond(){
+				response = null; 
+				if(response!="friday"){
+						console.log("It ought to be Friday.");
+					} else {
+						console.log("Hooray!");
+						bool = true; //if you remove this line it will loop forever
+					};
+				if(response="friday"){
+					console.log("It ought to be Friday.");}	
+			};
+			
+		//Functions & Parameters
+			function npFunc(){
+				three();
+				three(5);
+				three(4,0.15,7);
+				//correct number of parameters is 2. When there is the incorrect number nothing happens.
+			};
+			
+		//Arrays
+			function npArrays(){
+				var test = [0];
+				console.log(test[40]); //undefined- there is no 40
+				console.log(test[-1]); //undefined- no negative indexes
+				test.pop();
+				test.push('Push');
+				
+				test[20] = 20;
+				console.log(test[19]); //undefined, I made a hole.
+				
+				test.splice(1,0,"splice"); //add
+				test.splice(15,3); //remove
+			};
+			
+	</script>
+	</head>
 
-<body> 
-<button type ="button" onclick="npArrays()">Test</button>                        
-</body>       
-</html>
+	<body> 
+	<button type ="button" onclick="npArrays()">Test</button>                        
+	</body>       
+	</html>

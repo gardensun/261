@@ -2,20 +2,16 @@
 <html lang="en-us">
 <head>
 <meta charset="utf-8">
-<title>First One</title>
+<title>Second One</title>
 <script>
-	
-	//more inheritance - inherit from two things
-	//circular inheritance
-	//passing null
 	
 	function all(){
 		function Fruit(name,type,colour){
 			this.name = name;
 			this.type = type;
 			this.colour = colour;
-			Food.call();
-			Plant.call();
+			Food.call(this);
+			Plant.call(this);
 		};
 		
 		function Food(){
@@ -31,6 +27,11 @@
 		function Plant(){
 			this.status = "vegetarian";
 		}
+		
+		var sourApple = new Fruit("Sour Apple","Yummy","green"); 
+		var banana = new Fruit("Banana","Gross","yellow");
+		
+		
 		
 		//NASTY PATHS
 	
@@ -52,16 +53,17 @@
 			Person.call();
 		}
 		
-		var sourApple = new Fruit("Sour Apple","Yummy","green"); 
-		var banana = new Fruit("Banana","Gross","yellow");
+		
 		
 		console.log(sourApple.name);
 		console.log(banana.eat); //just posts the text of the function, doesnt execute
 		console.log(banana.eat());
-			
+		
+		//pass no parameters
 		var peach = new Fruit();
 		console.log(peach.name);
 		
+		//pass wrong parameters
 		var grape = new Fruit(5,7,9);
 		console.log(grape.type);
 		console.log(grape.eat());
