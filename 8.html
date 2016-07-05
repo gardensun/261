@@ -10,7 +10,7 @@
 	var url = "http://www.omdbapi.com/?t=The+Rescuers&y=&plot=short&r=json";
 	
 	function arrayToHTML(array) {
-		var displayDiv = document.getElementById("id01");
+		var displayDiv = document.getElementById("id02");
 		var posterImg = document.createElement("img");
 		posterImg.src = array.Poster;
 		displayDiv.appendChild(posterImg);
@@ -21,8 +21,10 @@
 			console.log(req.responseText);
 			var reqArray = JSON.parse(req.responseText); //turns site info into array
 			console.log(reqArray);
-			console.log(reqArray.Title);
-			console.log(reqArray.Poster);//picks just the poster and shows it
+			var displayDiv = document.getElementById("id02");
+			var title = document.createElement('h1')
+			title.innerHTML = reqArray.Title;
+			displayDiv.appendChild(title);
 			arrayToHTML(reqArray);
 		};
 	};
@@ -43,6 +45,7 @@
 </head>
 
 <body> 
-<div id="id01"></div>                      
+<div id="id01"></div>
+<div id="id02"></div>                      
 </body>       
 </html>

@@ -4,19 +4,46 @@
 		<meta charset="utf-8">
 		<title>DOM Manipulation</title>
 		<script>
-			function addJunk(){
-				var p = document.createElement('p')
-				p = "Here is some stuff."
-				var q = document.createTextNode("Here is some more stuff.")
+			function addFirst(){
+				var newFirst = document.createElement('p');
+				newFirst.innerHTML = 'Apples';
+				document.body.insertBefore(newFirst,document.body.children[5]);
 			};
+			
+			function addLast(){
+				var newLast = document.createElement('p');
+				newLast.innerHTML = 'Donuts';
+				var div = document.body;
+				div.insertBefore(newLast, div.lastChild);
+			};
+			
+			function moveNode(){
+				var first = document.body.children[5];
+				document.body.appendChild(first);
+			};
+			
+			function removeLast(){
+				var div = document.body;
+				div.removeChild(div.lastChild); //removes every other click until I get to ones Ive added?
+			};
+			
+			/*NASTY PATHS
+			var div = document.body;
+			var newThing = document.createElement('');
+			newThing = document.createElement('x');
+			*/
+			
+			
 		</script>
 	</head>
 
 	<body> 
-		<h1>This is the header</h1>
-		<p>And this is a paragraph.</p>
-		<p>Here is another paragraph.</p>
-		<p>Here is the last paragraph. <br> It has two sentences.</p>   
-		<button type ="button" onclick="addJunk()">Test</button>   		
+		<h1>DOM Manipulation</h1>
+		<button type ="button" onclick="addFirst()">Add to Top</button>
+		<button type ="button" onclick="addLast()">Add to Bottom</button>
+		<button type ="button" onclick="moveNode()">Move Top to Bottom</button>
+		<button type ="button" onclick="removeLast()">Remove Last</button>
+		<p>Bananas</p>
+		<p>Cucumbers</p>
 	</body>       
 </html>
