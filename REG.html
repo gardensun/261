@@ -37,7 +37,7 @@
 			function creatureEncounterTable () {
 				var roll = die(1,20);
 				if (roll<=2){
-					return "Ambushers";
+					return ambushersTable();
 					//reroll if chars are resting-- leave for now
 				}
 				else if (roll==3){
@@ -85,6 +85,35 @@
 				document.getElementById('test').innerHTML = encounterTable();
 			}
 			
+			/*-- Written by Joe Cramer --*/
+			function ambushersTable() {
+				var roll = die(1,20);
+				if(roll <= 2) {
+					return "1 <b>chuul</b> lurking in a pool of water"
+				}
+				else if(roll <=3) {
+					return die(1,6) + " <b>giant spiders</b> clinging to the walls or cieling"
+				}
+				else if(roll <=5) {
+					return "1 <b>grell</b> floating neat the high ceiling"
+				}
+				else if(roll <=9) {
+					return die(1,4) + " <b>gricks</b> hiding in a crevice or fissure"
+				}
+				else if(roll <=15) {
+					return die(1,4) + " <b>orogs</b> perching on ledges"
+				}
+				else if(roll <=17) {
+					return die(1,6) + " <b>piercers</b> masquerading as stalactites"
+				}
+				else if(roll <=20) {
+					return "1 <b>umber hulk</b> bursting out of a nearby wall"
+				}
+				else {
+					return "Numbers over 20 are not accepted. Please check your die roll.";
+				}
+			}
+			
 		</script>
     </head>
     <body>
@@ -93,6 +122,9 @@
 		<button type="button" onclick="test()">Roll</button>
 		<br><br>
 		<div id="test"></div>
+		<audio controls style="position:absolute; bottom:0; padding:20px">
+			<source src="media/01 Do I Wanna Know_.mp3" type="audio/mp3">
+		</audio>
     </body>
 	
 </html>
