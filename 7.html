@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<title>Manipulating CSS Class Properties</title>
+		<script>
+		
+			function color(){
+				var p = document.getElementById("theP");
+				if (p.style.color=="blue"||p.style.color=="black"){
+					p.style.color="red";
+				}
+				else {
+					p.style.color="blue";
+				};
+			};
+			
+			function toggleCase(){
+				var p = document.getElementById("theP");
+				if (p.style.textTransform=="lowercase"){
+					p.style.textTransform = "uppercase";
+				}
+				else {
+					p.style.textTransform = "lowercase";
+				};
+			};
+			
+			function changeHeaders(){
+				var list= document.getElementsByTagName("h1");
+				for (var i=0;i<=list.length;i++){
+					list[i].style.padding="3em";
+					list[i].style.border="solid thick green";
+					list[i].style.fontSize="small";
+				};
+			};
+			
+			function nasty(){
+				//Nasty Paths
+				var list= document.getElementsByTagName("h1");
+				list.style.border="solid"; //cannot set property of undefined
+				var nasty;
+				nasty.style.color="purple";
+				list[0].style.color="";
+				list[0].style.color=7;
+				list[0].style.fontSize="purple";
+				list[0].style.fontSize=7;
+				list[0].style.fontSize=nasty;
+				
+			}
+			
+			
+		</script>
+	</head>
+
+	<body> 
+		<p id="theP">text</p>
+		<button type="button" onclick="color()">RED/BLUE</button>
+		<button type="button" onclick="toggleCase()">CASE</button>
+		<h1>A</h1>
+		<h1>Row</h1>
+		<h1>of</h1>
+		<h1>Headers</h1>
+		<button type="button" onclick="changeHeaders()">CHANGE</button>
+		<button type="button" onclick="nasty()">NASTY</button>
+	</body>       
+</html>
