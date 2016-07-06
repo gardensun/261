@@ -4,6 +4,10 @@
 	<meta charset ="utf-8">
         <title> Random Encounter Generator </title>
 		<script>
+			function test(){
+				document.getElementById('test').innerHTML = encounterTable();
+			}
+			
 			function die (numDice,faces) {
 				var total = 0;
 				var roll;
@@ -26,8 +30,7 @@
 					return creatureEncounterTable();
 				}
 				else if (roll<=20){
-					return creatureEncounterTable();
-					//indicate that Terrain Table should also be rolled
+					return creatureEncounterTable() + "<br> In addition, roll once on the Terrain Encounters table.";
 				}
 				else {
 					return "Numbers over 20 are not accepted. Please check your die roll.";
@@ -37,7 +40,7 @@
 			function creatureEncounterTable () {
 				var roll = die(1,20);
 				if (roll<=2){
-					return ambushersTable();
+					return "You have been <b>ambushed</b> by: <br>" + ambushersTable();
 					//reroll if chars are resting-- leave for now
 				}
 				else if (roll==3){
@@ -79,10 +82,6 @@
 				else{
 					return "Numbers over 20 are not accepted. Please check your die roll.";
 				}
-			}
-			
-			function test(){
-				document.getElementById('test').innerHTML = encounterTable();
 			}
 			
 			/*-- Written by Joe Cramer --*/

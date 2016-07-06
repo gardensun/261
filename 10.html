@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<title>HTML5 Tags</title>
+		<script>
+			function fillCanvas(){
+				var c = document.getElementById("niceCanvas");
+				var ctx = c.getContext("2d");
+				ctx.fillStyle = "FF0000";
+				ctx.fillRect(5,5,190,90);
+			};
+			
+		</script>
+	</head>
+
+	<body> 
+		<h1>320x240 Video</h1> 
+		<video width="320" height="240" controls muted>
+			<source src="BibleVideo.mp4" type="video/mp4">
+			Your browser does not support this video tag.
+		</video>
+		
+		<h1>680x480 Video</h1>
+		<video width="680" height="480" controls muted>
+			<source src="BibleVideo.mp4" type="video/mp4">
+			Your browser does not support this video tag.
+		</video>
+		
+		<h1>Video with no width or height specified & some other tags</h1>
+		<video controls autoplay loop muted>
+			<source src="BibleVideo.mp4" type="video/mp4">
+			Your browser does not support this video tag.
+		</video>
+		
+		<h1>680x240 Video</h1>
+		<video width="680" height="240" controls muted>
+			<source src="BibleVideo.mp4" type="video/mp4">
+			Your browser does not support this video tag.
+		</video>
+		<br>
+		
+		<h1>Video with no control bar</h1>
+		<video width="320" height="240" autoplay muted>
+			<source src="BibleVideo.mp4" type="video/mp4">
+			Your browser does not support this video tag.
+		</video>
+		
+		<h1>No File</h1>
+		<video width="320" height="240" controls muted>
+			<source src="" type="video/mp4">
+			Your browser does not support this video tag.
+		</video>
+		
+		<h1>Video with no extension</h1>
+		<video width="320" height="240" controls muted>
+			<source src="BibleVideo" type="video/mp4">
+			Your browser does not support this video tag.
+		</video>
+		
+		<h1>Video with invalid file name</h1>
+		<video width="320" height="240" controls muted>
+			<source src="Video" type="video/mp4">
+			Your browser does not support this video tag.
+		</video>
+		
+		<h1>Audio</h1>
+		<audio controls>
+			<source src="Unlucky Skin.mp3" type="audio/mpeg">
+			Your browser does not support the audio tag.
+		</audio>
+		
+		<h1>Audio- autoplay, muted, loop</h1>
+		<audio controls autoplay muted loop>
+			<source src="Unlucky Skin.mp3" type="audio/mpeg">
+			Your browser does not support the audio tag.
+		</audio>
+		
+		<h1>Autoplay audio with no controls (muted)</h1>
+		<audio autoplay muted>
+			<source src="Unlucky Skin.mp3" type="audio/mpeg">
+			Your browser does not support the audio tag.
+		</audio>
+		
+		<h1>Audio with no controls</h1>
+		<audio>
+			<source src="Unlucky Skin.mp3" type="audio/mpeg">
+			Your browser does not support the audio tag.
+		</audio>
+		
+		<h1>Audio- no file extension</h1>
+		<audio controls>
+			<source src="Unlucky Skin" type="audio/mpeg">
+			Your browser does not support the audio tag.
+		</audio>
+		
+		<h1>Audio- invalid file</h1>
+		<audio controls>
+			<source src="Shakey Graves - Unlucky Skin.mp3" type="audio/mpeg">
+			Your browser does not support the audio tag.
+		</audio>
+		
+		<h1>Canvas</h1>
+		<canvas id="niceCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+		<button type="button" onClick="fillCanvas()">Fill Canvas</button>
+		
+		<h1>Canvas- no size specifications or borders</h1>
+		<canvas id="nastyCanvas"></canvas>
+		
+	</body>       
+</html>
