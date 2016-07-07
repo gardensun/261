@@ -33,13 +33,13 @@
 	
 	
 	//Nasty Paths
-		//make different request
- 		req.open("POST"),url,true); //POST is technically incorrect -- it is used client -> server
-		req.open("GET",url,false); //"Synchronous XMLHttpRequest on the main thread is deprecated because of its detrimental effects to the end user's experience."
-		req.send("");
-		req.send(0);
-		//send bad strings
-		//send numbers
+		//var nasty = new XMLHttpRequest();
+ 		nasty.open("POST"),url,true); //POST is technically incorrect -- it is used client -> server
+		nasty.open("GET",url,false); //"Synchronous XMLHttpRequest on the main thread is deprecated because of its detrimental effects to the end user's experience."
+		//nasty.open("nasty",url,true);
+		nasty.send("");
+		//nasty.send(157);
+		//nasty.send("nasty");
 
 	
 
