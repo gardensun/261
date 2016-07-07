@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Javascript Events</title>
+<script>
+
+	//onclick
+	function one(){
+		window.alert("You have clicked the button.");
+	}
+	//ondblclick
+	function two(){
+		window.alert("You have double-clicked the button.");
+	}
+	//nasty- cant have doubleclick & click on same- it just registers first click
+	
+	//onmouseover
+	function textChange(){
+		var p = document.getElementById("id1");
+		p.innerHTML = "You hovered over me!";
+	}
+	
+	//onmouseout
+	function thanks(){
+		var p = document.getElementById("id1");
+		p.innerHTML = "You hovered over me! <br> Thanks for hovering!";
+	}
+	//nasty- it does this every single time and it gets tedious & it flickers
+	
+	//onpause
+	function pressedPause(){
+		var div = document.getElementById("id2");
+		div.innerHTML = "Awww..."
+	}
+	//onplay
+	function pressedPlay(){
+		var div = document.getElementById("id2");
+		div.innerHTML = "I love this song!"
+	}
+	//ontouchstart
+	//var can = document.getElementsByTagName("canvas");
+	//can.addEventListener("ontouchstart",stupid);
+	
+	document.getElementsByTagName("canvas").addEventListener("ontouchstart",stupid);
+	function stupid(){
+		var c = document.getElementById('xxx');
+		var ctx = c.getContext("2d");
+		ctx.fillStyle = "blue";		
+		ctx.fillRect(0,0,150,150);
+	}
+	//"can.addEventListener is not a function" It thinks the whole thing is a function and I dont know why and I want to die
+</script>
+</head>
+
+<body> 
+	<h1>Javascript Events</h1>
+	<button type="button" onclick="one()">Click!</button>
+	<button type="button" ondblclick="two()">Double Click!</button>
+	<br>
+	<h4>Unlucky Skin</h4>
+	<audio controls onplay="pressedPlay()" onpause="pressedPause()">
+		<source src="Unlucky Skin.mp3" type="audio/mpeg">
+		Your browser does not support the audio tag.
+	</audio>
+	<div id="id2"></div>
+	<br><br>
+	Touch me!
+	<br>
+	<canvas id="xxx" width="150" height="150" style="border:1px solid black;"></canvas>
+	<!--<img src="dog.jpg" width="320" height="240"></img>-->
+	<br>
+	<p id="id1" onmouseover="textChange()" onmouseout="thanks()">Hover!</p>
+	
+</body>       
+</html>
