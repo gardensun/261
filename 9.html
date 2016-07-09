@@ -38,18 +38,28 @@
 		var div = document.getElementById("id2");
 		div.innerHTML = "I love this song!"
 	}
-	//ontouchstart
-	//var can = document.getElementsByTagName("canvas");
-	//can.addEventListener("ontouchstart",stupid);
-	
-	document.getElementsByTagName("canvas").addEventListener("ontouchstart",stupid);
-	function stupid(){
-		var c = document.getElementById('xxx');
+	//touchstart & touchmove
+	window.onload=function(){
+		var cans = document.getElementsByTagName("canvas");
+		var can = cans[0];
+		can.addEventListener("touchstart",touchBlue);
+		can.addEventListener("touchmove",touchGreen);
+	}
+
+	function touchBlue(){
+		var c = document.getElementById("theCan");
 		var ctx = c.getContext("2d");
 		ctx.fillStyle = "blue";		
 		ctx.fillRect(0,0,150,150);
 	}
-	//"can.addEventListener is not a function" It thinks the whole thing is a function and I dont know why and I want to die
+	function touchGreen(){
+		var c = document.getElementById("theCan");
+		var ctx = c.getContext("2d");
+		ctx.fillStyle = "green";		
+		ctx.fillRect(0,0,150,150);
+	}
+	
+	
 </script>
 </head>
 
@@ -67,7 +77,7 @@
 	<br><br>
 	Touch me!
 	<br>
-	<canvas id="xxx" width="150" height="150" style="border:1px solid black;"></canvas>
+	<canvas id="theCan" width="150" height="150" style="border:1px solid black;"></canvas>
 	<!--<img src="dog.jpg" width="320" height="240"></img>-->
 	<br>
 	<p id="id1" onmouseover="textChange()" onmouseout="thanks()">Hover!</p>
