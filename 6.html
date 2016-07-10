@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>CSS3 Animations & Transitions</title>
+<style>
+	#id1{ /*transition*/
+		width: 100px;
+		height: 100px;
+		background: green;
+		transition: width 4s;
+		animation: thing; /* not real animation- nothing happens*/
+	}
+	@keyframes ani1 {
+		0% {background-color: red; left: 0px;}
+		50% {background-color:blue; left: 200px;}
+		100% {background-color: red; left: 0px;}
+	}
+	#id2{ /*animation runs, transition can be triggered*/
+		width: 100px;
+		width: 100px;
+		height: 100px;
+		background: red;
+		position: relative;
+		animation: ani1 infinite;
+		animation-duration: 4s;
+		transition: height 4s;
+	}
+	@keyframes pulse {
+		0% {width: 100px; height: 100px}
+		50% {width: 300px; height: 300px}
+		100% {width: 100px; height: 100px}
+	}
+	#id3{
+		width: 100px;
+		width: 100px;
+		height: 100px;
+		background: purple;
+		postition: relative;
+	}
+	#nasty{/*doesnt exist, nothing will happen*/
+		width: 100;
+		height: 100px;
+		background: red;
+		transition: background 1s;
+	}
+	#id4{ /*nasty*/
+		width: 100; /*'px' is missing so it takes up the whole screen & transition doesnt work*/
+		height: 100px;
+		background: red;
+		animation-name: ani1;
+		animation-duration: 4s;
+	}
+	#id5{ /*nasty*/ /*missing 'position: relative' so that part of the animation doesnt run*/
+		width: 100px;
+		width: 100px;
+		height: 100px;
+		background: red;
+		animation-name: ani1;
+		animation-duration: 3s;
+		animation-delay: 3s;
+		animation-iteration-count: 3;
+	}
+	
+
+</style>
+<script>
+	function test1(){
+		var id1 = document.getElementById("id1");
+		if (id1.style.width=="100px"||id1.style.width==""){ //does not recognize "100px" right off
+			id1.style.width="600px";
+		}
+		else {
+			id1.style.width="100px";
+		}
+	};
+	function test2(){
+		var id2 = document.getElementById("id2");
+		if (id2.style.height=="100px"||id2.style.height==""){
+			id2.style.height="200px";
+		}
+		else {
+			id2.style.height="100px";
+		}
+	};
+	function test3(){
+		var id3 = document.getElementById("id3");
+		if (id3.style.animation==""){
+			id3.style.animation = "4s pulse infinite";
+		}
+		else{
+			id3.style.animation = null;
+		}
+	};
+	
+	
+</script>
+</head>
+
+<body> 
+	<h1>CSS3 Animations & Transforms</h1>
+	<button type="button" id="butt" onclick="test1()">Trigger Transition</button>
+	<br> <br>
+	<div id="id1"></div>
+	<br><br>
+	<button type="button" id="butt2" onclick="test2()">Trigger Transition</button>	
+	<br> <br>
+	<div id="id2"></div>
+	<br><br>
+	<button type="button" id="butt2" onclick="test3()">Animation On/Off</button>	
+	<br><br>
+	<div id="id3"></div>
+	<br>
+	<div id="id4"></div>
+	<br>
+	<div id="id5"></div>
+	
+</body>       
+</html>
