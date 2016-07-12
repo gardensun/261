@@ -45,6 +45,8 @@
 		can.addEventListener("touchstart",touchBlue);
 		can.addEventListener("touchmove",touchGreen);
 	}
+3
+.
 
 	function touchBlue(){
 		var c = document.getElementById("theCan");
@@ -65,7 +67,7 @@
 
 <body> 
 	<h1>Javascript Events</h1>
-	<button type="button" onclick="one()">Click!</button>
+	<button type="button" onclick="one()" ondblclick="two()">Click!</button>
 	<button type="button" ondblclick="two()">Double Click!</button>
 	<br>
 	<h4>Unlucky Skin</h4>
@@ -78,7 +80,6 @@
 	Touch me!
 	<br>
 	<canvas id="theCan" width="150" height="150" style="border:1px solid black;"></canvas>
-	<!--<img src="dog.jpg" width="320" height="240"></img>-->
 	<br>
 	<p id="id1" onmouseover="textChange()" onmouseout="thanks()">Hover!</p>
 	

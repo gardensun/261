@@ -8,7 +8,7 @@
 		width: 100px;
 		height: 100px;
 		background: green;
-		transition: width 4s;
+		transition: width 3s;
 		animation: thing; /* not real animation- nothing happens*/
 	}
 	@keyframes ani1 {
@@ -31,6 +31,9 @@
 		50% {width: 300px; height: 300px}
 		100% {width: 100px; height: 100px}
 	}
+	//keyframes out of order
+	//no keyframes
+	//- animation time
 	#id3{
 		width: 100px;
 		width: 100px;
@@ -45,9 +48,11 @@
 		transition: background 1s;
 	}
 	#id4{ /*nasty*/
-		width: 100; /*'px' is missing so it takes up the whole screen & transition doesnt work*/
+		width: 100; /*'px' is missing so it takes up the whole screen*/
 		height: 100px;
 		background: red;
+		transition: background 3s;
+		position: relative;
 		animation-name: ani1;
 		animation-duration: 4s;
 	}
@@ -91,6 +96,9 @@
 		else{
 			id3.style.animation = null;
 		}
+	//left, top
+	//what if left is way negative or positive
+	
 	};
 	
 	

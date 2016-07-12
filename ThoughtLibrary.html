@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Thought Library</title>
+<style>
+	#bodyID{
+		background: white;
+		transition: background 2s;
+	}
+	h1{
+		color: black;
+		transition: color 1.5s;
+	}
+	div{
+		color: black;
+		transition: color 1.5s;
+	}
+	#pic{
+		position: relative;
+		transition: opacity 2s;
+	}
+	@keyframes shift{
+		0%{
+			transform: translate(0,0);
+		}
+		100%{
+			transform: translate(0,200px);
+		}
+	}
+	
+
+</style>
+<script>
+		
+		function change(){
+		var headers1 = document.getElementsByTagName("h1");
+		var divs = document.getElementsByTagName("div");
+		var bod = document.getElementById("bodyID");
+		var bodcol = document.getElementById("bodyID").style.background;
+		var col;
+		var i;
+		
+		if (bodcol=="white"||bodcol==""){
+			bod.style.background="#1a0d00";
+			col="white";
+		}
+		else{
+			bod.style.background="white";
+			col="black";
+		}
+		
+		for (i=0;i<=divs.length-1;i++){
+			divs[i].style.color=col;
+		}
+		for (i=0;i<=headers1.length-1;i++){
+			headers1[i].style.color=col;
+		}
+	}
+	
+	window.onload=function(){
+		var pic = document.getElementById("pic");
+		pic.addEventListener("animationend",catDog);
+	}
+	
+	function catDog(){
+		var pic = document.getElementById("pic");
+		if (pic.src=="file:///C:/Users/gardensun/Desktop/SP2016/261/dog.jpg"){
+			pic.src="file:///C:/Users/gardensun/Desktop/SP2016/261/cat.jpg";
+		}
+		else{
+			pic.src="file:///C:/Users/gardensun/Desktop/SP2016/261/dog.jpg";
+		}
+		pic.style.opacity = 1;
+		pic.style.animation= null;
+	}
+	
+	function trigger(){
+		var pic = document.getElementById("pic");
+		
+		if (pic.style.animation==""){
+			pic.style.animation = "2s shift";
+			pic.style.opacity = 0;
+		}
+		else{
+			pic.style.animation = null;
+		}
+	}
+	
+	
+</script>
+</head>
+
+<body id="bodyID" background="white"> 
+	<h1 id="headingID">Thought Library</h1>
+	<button onclick="change()">Toggle Night/Day</button>
+	<br><br>
+	<img id="pic" src="dog.jpg" width="100" height="100" onclick="trigger()"/>
+	<br>
+	<div id="divID">Here is some text for testing junk.</div>
+	<div>Here is more text for testing junk.</div>
+	
+</body>       
+</html>
